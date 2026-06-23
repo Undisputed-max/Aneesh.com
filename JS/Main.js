@@ -78,3 +78,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     console.error(error);
   }
 });
+
+window.closeContactPopup = function (e) {
+  if (e && e.target !== document.getElementById('contactOverlay')) return;
+
+  document.getElementById('contactOverlay').style.display = 'none';
+  document.body.style.overflow = '';
+};
