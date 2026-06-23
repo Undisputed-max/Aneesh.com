@@ -1,0 +1,80 @@
+<section class="game-section alt" id="shib" style="overflow:visible;">
+  <div class="game-header">
+    <div class="game-featured-badge">&#9733; Featured &middot; GamaSome &middot; 2024&ndash;Present</div>
+    <div class="game-title">Shib<br><span>Eternity</span></div>
+    <div class="game-meta-row">
+      <span class="gm-tag">Metaverse</span>
+      <span class="gm-tag">Live Multiplayer</span>
+      <span class="gm-tag">Cross-platform</span>
+      <span class="gm-tag">Team Lead</span>
+      <span class="gm-tag">iOS &middot; Android &middot; Windows</span>
+    </div>
+  </div>
+
+  <div class="game-grid">
+    <div>
+      <p class="game-desc">A <strong>Fortnite-scale persistent metaverse</strong> &mdash; one live world, multiple game modes running simultaneously, players moving between experiences without session reloads. Think social hub plus competitive mini-games, all connected across three device classes in real time.</p>
+      <p class="game-desc">Built at GamaSome. <strong>Led a team of 4.</strong> I owned the cross-platform networking layer, the multiplayer architecture, and the gameplay systems holding the entire platform together &mdash; from initial design through to shipping on mobile, iOS, and Windows.</p>
+
+      <div class="role-box">
+        <div class="role-box-label">// My role &mdash; Team Lead & Lead Programmer</div>
+        <ul>
+          <li>Designed the full <strong>dedicated server architecture</strong> &mdash; session management, player replication, persistent world state across concurrent clients.</li>
+          <li>Built a <strong>platform abstraction layer</strong> &mdash; single Unreal codebase deploying to Android, iOS, and Windows with dynamic quality scaling per device budget.</li>
+          <li>Implemented a <strong>data-driven game mode router</strong> &mdash; players enter and exit mini-game instances inside the persistent world without a full session handoff.</li>
+          <li>Architected a <strong>modular avatar pipeline</strong> for digital human characters &mdash; parameter-driven animation mapping, API-reactive facial/body states, extensible without new assets per variation.</li>
+          <li>Led sprint planning, code reviews, and cross-discipline coordination with art and design teams.</li>
+        </ul>
+      </div>
+
+      <div class="arch-label">// System architecture</div>
+      <div class="arch-grid" style="grid-template-columns:repeat(3,1fr);">
+        <div class="arch-block"><div class="arch-block-tag">Networking</div><div class="arch-block-title">UE5 Dedicated Server</div><div class="arch-block-desc">Authoritative server model with client-side movement prediction and rollback. Custom replication channels to minimise bandwidth for mobile clients. Seamless session joins without full map reload.</div></div>
+        <div class="arch-block"><div class="arch-block-tag">Cross-platform</div><div class="arch-block-title">Platform Abstraction</div><div class="arch-block-desc">Input, rendering budget, and texture streaming all abstracted per platform at runtime. Scalability groups defined per device class. Single CI/CD pipeline outputs Android APK, iOS IPA, and Windows build simultaneously.</div></div>
+        <div class="arch-block"><div class="arch-block-tag">Gameplay</div><div class="arch-block-title">Game Mode Router</div><div class="arch-block-desc">Data-asset-driven game mode registry. World partition used to stream mini-game zones in/out. Player state preserved across mode transitions via a custom save-component, no reconnect required.</div></div>
+        <div class="arch-block"><div class="arch-block-tag">Avatar</div><div class="arch-block-title">Digital Human Pipeline</div><div class="arch-block-desc">Control rig + blend space driven by runtime parameters rather than hardcoded states. API callbacks update animation variables directly, transitioning characters from static assets to live-reactive digital humans.</div></div>
+        <div class="arch-block"><div class="arch-block-tag">Performance</div><div class="arch-block-title">Rendering Optimisation</div><div class="arch-block-desc">Nanite disabled on mobile paths; instanced static meshes and LOD budgets tuned per platform. Shader complexity reduced for mobile GPU constraints. Frame time profiled with Unreal Insights.</div></div>
+        <div class="arch-block"><div class="arch-block-tag">Team</div><div class="arch-block-title">4-Person Lead</div><div class="arch-block-desc">Planned and tracked sprints in Jira. Defined coding standards and review gates. Resolved daily blockers between art, rigging, and engineering. Took game from vertical slice to cross-platform release.</div></div>
+      </div>
+
+      <div class="tech-label">// Technologies</div>
+      <div class="tech-stack">
+        <span class="tp core">Unreal Engine 5</span><span class="tp core">C++</span><span class="tp core">Dedicated Server</span><span class="tp core">UE Replication</span>
+        <span class="tp">GAS</span><span class="tp">World Partition</span><span class="tp">Control Rig</span><span class="tp">Online Subsystem</span>
+        <span class="tp">Android NDK</span><span class="tp">Xcode / iOS</span><span class="tp">Unreal Insights</span><span class="tp">Perforce</span><span class="tp">UMG</span>
+      </div>
+
+      <div class="platform-row">
+        <div class="plat-badge active">Android</div>
+        <div class="plat-badge active">iOS</div>
+        <div class="plat-badge active">Windows</div>
+      </div>
+    </div>
+
+    <div class="media-col" style="position:sticky;top:80px;align-self:start;height:fit-content;">
+      <div class="media-viewer">
+        <div class="media-main" onclick="openVideo('shib_main')">
+          <div class="vid-corner">Gameplay Reel &middot; 2024</div>
+          <div class="play-wrap">
+            <div class="play-btn"><svg width="20" height="20" viewBox="0 0 20 20"><path class="play-icon" d="M6 4l12 6-12 6V4z"/></svg></div>
+            <div class="vid-label">Shib Eternity &mdash; Gameplay Reel</div>
+            <div class="vid-sub">Add your YouTube / Vimeo URL in the script</div>
+          </div>
+        </div>
+        <div class="media-rail-shell">
+          <button class="media-nav" type="button" onclick="scrollMedia(this,-1)" aria-label="Previous media">&lsaquo;</button>
+          <div class="media-rail">
+            <div class="media-card video" onclick="openVideo('shib_main')"><span class="media-card-label">Gameplay Reel</span></div>
+            <div class="media-card video" onclick="openVideo('shib_mp')"><span class="media-card-label">Multiplayer demo</span></div>
+            <div class="media-card video" onclick="openVideo('shib_tech')"><span class="media-card-label">Tech walkthrough</span></div>
+            <div class="media-card photo" onclick="openPhoto('shib',0)"><span class="media-card-label">Screenshot 1</span></div>
+            <div class="media-card photo" onclick="openPhoto('shib',1)"><span class="media-card-label">Screenshot 2</span></div>
+            <div class="media-card photo" onclick="openPhoto('shib',2)"><span class="media-card-label">Screenshot 3</span></div>
+          </div>
+          <button class="media-nav" type="button" onclick="scrollMedia(this,1)" aria-label="Next media">&rsaquo;</button>
+        </div>
+      </div>
+      <p class="media-note">&rarr; Add more .media-card items to this rail for extra videos or screenshots.</p>
+    </div>
+  </div>
+</section>

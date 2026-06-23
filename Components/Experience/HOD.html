@@ -1,0 +1,73 @@
+<section class="game-section alt" id="heroes" style="overflow:visible;">
+  <div class="game-header">
+    <div class="game-featured-badge" style="background:var(--muted);color:#fff;">Gods &amp; Heroes &middot; Jul 2021 &ndash; May 2022</div>
+    <div class="game-title">Heroes of<br><span>District</span></div>
+    <div class="game-meta-row">
+      <span class="gm-tag">Mobile Action RPG</span>
+      <span class="gm-tag">Weapon Systems</span>
+      <span class="gm-tag">Inventory</span>
+      <span class="gm-tag">Shader VFX</span>
+    </div>
+  </div>
+
+  <div class="game-grid">
+    <div>
+      <p class="game-desc">A <strong>mobile action RPG</strong> with weapon variety, real-time combat, and distinct visual identity across character classes. The game required performant shader work for realistic visuals on mobile hardware &mdash; a direct constraint that shaped every rendering decision.</p>
+      <p class="game-desc">My focus: <strong>weapon and inventory systems</strong> built cleanly enough to support rapid content expansion, <strong>shader-based visual enhancements</strong> that held up on mid-range Android devices, and mobile performance optimisation that kept frame time stable during heavy combat sequences.</p>
+
+      <div class="role-box">
+        <div class="role-box-label">// My responsibilities</div>
+        <ul>
+          <li>Designed and implemented a <strong>weapon system</strong> &mdash; weapon components attached to character, swap logic, animation notify integration, hit detection using line/sweep traces with damage type dispatch.</li>
+          <li>Built a <strong>modular inventory system</strong> &mdash; item data assets, equipment slots, pickup/drop flow, and inventory UI bound to gameplay state.</li>
+          <li>Wrote <strong>custom material shaders</strong> in Unreal's material graph for rim lighting, surface wetness, and emissive weapon effects &mdash; all optimised for mobile GPU instruction budgets.</li>
+          <li>Profiled and optimised <strong>mobile performance</strong> &mdash; draw call batching, texture streaming, LOD configuration, and animation tick rate management to hit 60fps on target devices.</li>
+        </ul>
+      </div>
+
+      <div class="arch-label">// System architecture</div>
+      <div class="arch-grid" style="grid-template-columns:repeat(3,1fr);">
+        <div class="arch-block"><div class="arch-block-tag">Weapons</div><div class="arch-block-title">Component-based Weapon System</div><div class="arch-block-desc">UActorComponent subclass per weapon type, attached to character skeleton socket. Fire/reload logic encapsulated per component. Damage dispatched via UGameplayStatics with custom damage type assets for elemental effects.</div></div>
+        <div class="arch-block"><div class="arch-block-tag">Inventory</div><div class="arch-block-title">Data-Asset Inventory</div><div class="arch-block-desc">Items defined as UDataAsset blueprints &mdash; type, rarity, mesh, stats. Inventory component holds TArray of item references. UI widget bound via UMG property binding, updating reactively on inventory mutation.</div></div>
+        <div class="arch-block"><div class="arch-block-tag">Rendering</div><div class="arch-block-title">Mobile Shader Optimisation</div><div class="arch-block-desc">Custom material functions for rim light, emissive pulse, and surface variation. Instruction counts kept under mobile GPU limits using texture atlases and conditional static switches. Shader complexity visualiser used throughout development.</div></div>
+      </div>
+
+      <div class="tech-label">// Technologies</div>
+      <div class="tech-stack">
+        <span class="tp core">Unreal Engine</span><span class="tp core">C++</span><span class="tp core">Custom Materials</span><span class="tp core">Animation Blueprints</span>
+        <span class="tp">UDataAsset</span><span class="tp">UMG</span><span class="tp">Mobile Profiling</span><span class="tp">LOD</span><span class="tp">Texture Streaming</span>
+      </div>
+
+      <div class="platform-row">
+        <div class="plat-badge active">Android</div>
+        <div class="plat-badge active">iOS</div>
+      </div>
+    </div>
+
+    <div class="media-col" style="position:sticky;top:80px;align-self:start;height:fit-content;">
+      <div class="media-viewer">
+        <div class="media-main" onclick="openVideo('heroes_main')">
+          <div class="vid-corner">Gameplay &middot; 2022</div>
+          <div class="play-wrap">
+            <div class="play-btn"><svg width="20" height="20" viewBox="0 0 20 20"><path class="play-icon" d="M6 4l12 6-12 6V4z"/></svg></div>
+            <div class="vid-label">Heroes of District &mdash; Gameplay</div>
+            <div class="vid-sub">Add your YouTube / Vimeo URL in the script</div>
+          </div>
+        </div>
+        <div class="media-rail-shell">
+          <button class="media-nav" type="button" onclick="scrollMedia(this,-1)" aria-label="Previous media">&lsaquo;</button>
+          <div class="media-rail">
+            <div class="media-card video" onclick="openVideo('heroes_main')"><span class="media-card-label">Gameplay</span></div>
+            <div class="media-card video" onclick="openVideo('heroes_weapon')"><span class="media-card-label">Weapon system</span></div>
+            <div class="media-card video" onclick="openVideo('heroes_shader')"><span class="media-card-label">Shader VFX</span></div>
+            <div class="media-card photo" onclick="openPhoto('heroes',0)"><span class="media-card-label">Screenshot 1</span></div>
+            <div class="media-card photo" onclick="openPhoto('heroes',1)"><span class="media-card-label">Screenshot 2</span></div>
+            <div class="media-card photo" onclick="openPhoto('heroes',2)"><span class="media-card-label">Screenshot 3</span></div>
+          </div>
+          <button class="media-nav" type="button" onclick="scrollMedia(this,1)" aria-label="Next media">&rsaquo;</button>
+        </div>
+      </div>
+      <p class="media-note">&rarr; Add more .media-card items to this rail for extra videos or screenshots.</p>
+    </div>
+  </div>
+</section>

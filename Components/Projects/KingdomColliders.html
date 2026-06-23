@@ -1,0 +1,75 @@
+<section class="game-section" id="kingdom" style="overflow:visible;">
+  <div class="game-header">
+    <div class="game-featured-badge" style="background:rgba(232,255,71,.12);color:var(--accent);border:1px solid rgba(232,255,71,.3);">Solo Project &middot; 1.5 Years</div>
+    <div class="game-title">Kingdom<br><span>Colliders</span></div>
+    <div class="game-meta-row">
+      <span class="gm-tag">Card Battle</span>
+      <span class="gm-tag">Clash Royale-style</span>
+      <span class="gm-tag">Solo Dev</span>
+      <span class="gm-tag">Mobile</span>
+      <span class="gm-tag">Full Stack &mdash; Design to Ship</span>
+    </div>
+  </div>
+
+  <div class="game-grid">
+    <div>
+      <p class="game-desc">A <strong>card-based real-time strategy game</strong> inspired by Clash Royale &mdash; players build a deck, spend elixir to deploy units onto the battlefield, and race to destroy the opponent's three towers before theirs fall. Fast, readable, and mobile-first.</p>
+      <p class="game-desc">Every line of code, every system, every piece of logic &mdash; <strong>built by me alone over 1.5 years</strong>. Card deployment, unit AI, tower health, elixir economy, collision-driven combat, matchmaking &mdash; all of it from scratch in Unreal C++. This is the project that taught me how games actually hold together end to end.</p>
+
+      <div class="role-box">
+        <div class="role-box-label">// What I built &mdash; solo, from scratch</div>
+        <ul>
+          <li><strong>Card system and deck builder</strong> &mdash; data-asset-driven card definitions (unit type, stats, cost), deck validation, and in-match hand/elixir management loop.</li>
+          <li><strong>Unit AI and pathfinding</strong> &mdash; behaviour tree-driven unit logic: march toward target tower, prioritise nearest threat, attack on range trigger, death and reward events.</li>
+          <li><strong>Tower damage and win condition</strong> &mdash; three-tower destruction system with networked health replication and game-end evaluation logic.</li>
+          <li><strong>Elixir economy system</strong> &mdash; server-authoritative elixir tick, card cost deduction with client-side prediction and server reconciliation.</li>
+          <li><strong>Collision-driven combat</strong> &mdash; deterministic hit resolution using physics overlap events, damage type dispatch, and knockback response.</li>
+          <li><strong>Mobile UI and UX</strong> &mdash; full match HUD, card hand display, drag-to-deploy input, and end-of-match result screen.</li>
+        </ul>
+      </div>
+
+      <div class="arch-label">// System architecture</div>
+      <div class="arch-grid" style="grid-template-columns:repeat(3,1fr);">
+        <div class="arch-block"><div class="arch-block-tag">Card System</div><div class="arch-block-title">Data-Asset Card Pipeline</div><div class="arch-block-desc">Each card is a UDataAsset defining unit class, mesh, stats, and elixir cost. Deck stored as TArray on PlayerState. Hand manager draws from deck and cycles on card use. All card deployment is server-authoritative.</div></div>
+        <div class="arch-block"><div class="arch-block-tag">AI</div><div class="arch-block-title">Behaviour Tree Units</div><div class="arch-block-desc">UE Behaviour Tree per unit type. Blackboard keys: target actor, attack range, health threshold. EQS used to select optimal march path toward enemy towers. Units share a perception component to react to nearby enemies mid-march.</div></div>
+        <div class="arch-block"><div class="arch-block-tag">Combat</div><div class="arch-block-title">Collision-driven Resolution</div><div class="arch-block-desc">Attack radius modelled as sphere overlap, triggers damage event on server. Damage types defined as UDamageType subclasses. Tower health component broadcasts OnDestroyed delegate &mdash; game mode listens and evaluates win condition.</div></div>
+      </div>
+
+      <div class="tech-label">// Technologies</div>
+      <div class="tech-stack">
+        <span class="tp core">Unreal Engine</span><span class="tp core">C++</span><span class="tp core">Behaviour Trees</span><span class="tp core">EQS</span>
+        <span class="tp">UDataAsset</span><span class="tp">UMG</span><span class="tp">Physics Overlap</span><span class="tp">Mobile Input</span><span class="tp">Git</span>
+      </div>
+
+      <div class="platform-row">
+        <div class="plat-badge active">Mobile</div>
+      </div>
+    </div>
+
+    <div class="media-col" style="position:sticky;top:80px;align-self:start;height:fit-content;">
+      <div class="media-viewer">
+        <div class="media-main" onclick="openVideo('kingdom_main')">
+          <div class="vid-corner">Solo Project</div>
+          <div class="play-wrap">
+            <div class="play-btn"><svg width="20" height="20" viewBox="0 0 20 20"><path class="play-icon" d="M6 4l12 6-12 6V4z"/></svg></div>
+            <div class="vid-label">KingdomColliders &mdash; Gameplay</div>
+            <div class="vid-sub">Add your YouTube / Vimeo URL in the script</div>
+          </div>
+        </div>
+        <div class="media-rail-shell">
+          <button class="media-nav" type="button" onclick="scrollMedia(this,-1)" aria-label="Previous media">&lsaquo;</button>
+          <div class="media-rail">
+            <div class="media-card video" onclick="openVideo('kingdom_main')"><span class="media-card-label">Gameplay</span></div>
+            <div class="media-card video" onclick="openVideo('kingdom_ai')"><span class="media-card-label">Unit AI demo</span></div>
+            <div class="media-card video" onclick="openVideo('kingdom_cards')"><span class="media-card-label">Card system</span></div>
+            <div class="media-card photo" onclick="openPhoto('kingdom',0)"><span class="media-card-label">Screenshot 1</span></div>
+            <div class="media-card photo" onclick="openPhoto('kingdom',1)"><span class="media-card-label">Screenshot 2</span></div>
+            <div class="media-card photo" onclick="openPhoto('kingdom',2)"><span class="media-card-label">Screenshot 3</span></div>
+          </div>
+          <button class="media-nav" type="button" onclick="scrollMedia(this,1)" aria-label="Next media">&rsaquo;</button>
+        </div>
+      </div>
+      <p class="media-note">&rarr; Add more .media-card items to this rail for extra videos or screenshots.</p>
+    </div>
+  </div>
+</section>

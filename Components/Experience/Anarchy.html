@@ -1,0 +1,69 @@
+<section class="game-section" id="anarchy" style="overflow:visible;--project-bg:linear-gradient(135deg,#101821 0%,#0a0d12 52%,#111722 100%);--project-image:radial-gradient(circle at 82% 12%,rgba(71,197,255,.18),transparent 34%),radial-gradient(circle at 92% 72%,rgba(80,92,104,.25),transparent 38%);">
+  <div class="game-header">
+    <div class="game-featured-badge blue">Anarchy &middot; Sep 2022 &ndash; Oct 2023</div>
+    <div class="game-title" style="color:#fff;">Anarchy<br><span style="color:var(--accent2);">Warzone</span></div>
+    <div class="game-meta-row">
+      <span class="gm-tag blue">Battle Royale</span>
+      <span class="gm-tag blue">Vehicles</span>
+      <span class="gm-tag blue">Inventory System</span>
+      <span class="gm-tag blue">Multiplayer</span>
+    </div>
+  </div>
+
+  <div class="game-grid">
+    <div>
+      <p class="game-desc">A <strong>full-scale battle royale</strong> &mdash; last player standing, shrinking zone, looting, and a fleet of driveable vehicles spread across the map. Every vehicle type &mdash; bikes, cars, armoured trucks &mdash; had distinct physics, handling models, and combat interactions, all replicated live across multiplayer clients.</p>
+      <p class="game-desc">I was responsible for three of the hardest systems in any battle royale: <strong>vehicle physics from scratch</strong>, a <strong>full multiplayer inventory system</strong>, and making all of it work at scale across concurrent online sessions. No middleware &mdash; written in Unreal C++ end to end.</p>
+
+      <div class="role-box">
+        <div class="role-box-label">// My responsibilities</div>
+        <ul>
+          <li>Built <strong>all vehicle types from the ground up</strong> &mdash; custom wheel physics, suspension simulation, torque curves, collision response, and networked movement for bikes, cars, and armoured vehicles.</li>
+          <li>Implemented a <strong>full multiplayer inventory system</strong> &mdash; item pickup, storage, equip/drop, and UI &mdash; all replicated with server authority, conflict resolution, and anti-cheat validation.</li>
+          <li>Architected <strong>client-server state replication</strong> for vehicle occupancy, weapon state, and player inventory with delta-compression to keep bandwidth under control at scale.</li>
+          <li>Owned <strong>cross-platform build pipeline</strong> &mdash; single codebase delivering consistent gameplay across different target devices.</li>
+          <li>Built and iterated the <strong>multiplayer UI/UX</strong> &mdash; health, inventory HUD, vehicle interaction prompts &mdash; all driven by replicated game state.</li>
+        </ul>
+      </div>
+
+      <div class="arch-label">// System architecture</div>
+      <div class="arch-grid" style="grid-template-columns:repeat(3,1fr);">
+        <div class="arch-block"><div class="arch-block-tag">Vehicles</div><div class="arch-block-title">Custom Vehicle Physics</div><div class="arch-block-desc">Built on UE's Chaos Vehicle plugin, extended with custom suspension and torque models per vehicle class. Networked via compressed transform replication &mdash; smooth interpolation on clients, authoritative simulation on server.</div></div>
+        <div class="arch-block"><div class="arch-block-tag">Inventory</div><div class="arch-block-title">Replicated Inventory</div><div class="arch-block-desc">TArray-backed inventory component on each PlayerState, replicated with FFastArraySerializer for delta efficiency. Server validates all pickup/drop RPCs before committing state. Supports stacking, equip slots, and loot spawner integration.</div></div>
+        <div class="arch-block"><div class="arch-block-tag">Networking</div><div class="arch-block-title">BR Session Management</div><div class="arch-block-desc">Online Subsystem session flow: lobby &rarr; map load &rarr; in-game &rarr; results. Zone shrink logic runs server-side, broadcast via multicast. Player elimination handled with deferred authority to prevent desync on kill confirmation.</div></div>
+      </div>
+
+      <div class="tech-label">// Technologies</div>
+      <div class="tech-stack">
+        <span class="tp core">Unreal Engine</span><span class="tp core">C++</span><span class="tp core">Chaos Physics</span><span class="tp core">FFastArraySerializer</span>
+        <span class="tp">Online Subsystem</span><span class="tp">RPCs</span><span class="tp">UMG HUD</span><span class="tp">Git</span><span class="tp">Perforce</span>
+      </div>
+    </div>
+
+    <div class="media-col" style="position:sticky;top:80px;align-self:start;height:fit-content;">
+      <div class="media-viewer">
+        <div class="media-main" onclick="openVideo('anarchy_main')">
+          <div class="vid-corner">Gameplay &middot; 2023</div>
+          <div class="play-wrap">
+            <div class="play-btn"><svg width="20" height="20" viewBox="0 0 20 20"><path class="play-icon" d="M6 4l12 6-12 6V4z"/></svg></div>
+            <div class="vid-label">Anarchy Warzone &mdash; Gameplay</div>
+            <div class="vid-sub">Add your YouTube / Vimeo URL in the script</div>
+          </div>
+        </div>
+        <div class="media-rail-shell">
+          <button class="media-nav" type="button" onclick="scrollMedia(this,-1)" aria-label="Previous media">&lsaquo;</button>
+          <div class="media-rail">
+            <div class="media-card video" onclick="openVideo('anarchy_main')"><span class="media-card-label">Gameplay</span></div>
+            <div class="media-card video" onclick="openVideo('anarchy_vehicle')"><span class="media-card-label">Vehicle physics</span></div>
+            <div class="media-card video" onclick="openVideo('anarchy_inv')"><span class="media-card-label">Inventory demo</span></div>
+            <div class="media-card photo" onclick="openPhoto('anarchy',0)"><span class="media-card-label">Screenshot 1</span></div>
+            <div class="media-card photo" onclick="openPhoto('anarchy',1)"><span class="media-card-label">Screenshot 2</span></div>
+            <div class="media-card photo" onclick="openPhoto('anarchy',2)"><span class="media-card-label">Screenshot 3</span></div>
+          </div>
+          <button class="media-nav" type="button" onclick="scrollMedia(this,1)" aria-label="Next media">&rsaquo;</button>
+        </div>
+      </div>
+      <p class="media-note">&rarr; Add more .media-card items to this rail for extra videos or screenshots.</p>
+    </div>
+  </div>
+</section>
