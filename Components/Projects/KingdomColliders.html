@@ -1,11 +1,10 @@
 <section class="game-section" id="kingdom" style="overflow:visible;">
   <div class="game-header">
-    <div class="game-featured-badge" style="background:rgba(232,255,71,.12);color:var(--accent);border:1px solid rgba(232,255,71,.3);">Solo Project &middot; 1.5 Years</div>
+    <div class="game-featured-badge" style="background:rgba(232,255,71,.12);color:var(--accent);border:1px solid rgba(232,255,71,.3);">&middot; Personal Project &middot;</div>
     <div class="game-title">Kingdom<br><span>Colliders</span></div>
     <div class="game-meta-row">
       <span class="gm-tag">Card Battle</span>
       <span class="gm-tag">Clash Royale-style</span>
-      <span class="gm-tag">Solo Dev</span>
       <span class="gm-tag">Mobile</span>
       <span class="gm-tag">Full Stack &mdash; Design to Ship</span>
     </div>
@@ -13,11 +12,10 @@
 
   <div class="game-grid">
     <div>
-      <p class="game-desc">A <strong>card-based real-time strategy game</strong> inspired by Clash Royale &mdash; players build a deck, spend elixir to deploy units onto the battlefield, and race to destroy the opponent's three towers before theirs fall. Fast, readable, and mobile-first.</p>
-      <p class="game-desc">Every line of code, every system, every piece of logic &mdash; <strong>built by me alone over 1.5 years</strong>. Card deployment, unit AI, tower health, elixir economy, collision-driven combat, matchmaking &mdash; all of it from scratch in Unreal C++. This is the project that taught me how games actually hold together end to end.</p>
-
+      <p class="game-desc">A <strong>card-based real-time strategy game</strong> inspired by Clash Royale &mdash; players build a deck, spend elixir to deploy units onto the battlefield, and race to destroy the opponent's tower before theirs fall. Fast, readable, and mobile-first.</p>
+      <p class="game-desc">Developed as part of a <strong>4-member cross-functional team</strong> alongside artists and designers, I was responsible for the entire gameplay programming stack in <strong>Unreal Engine C++</strong>. I built and integrated core systems including card deployment, unit AI, tower health, elixir economy, collision-driven combat, matchmaking, and gameplay architecture over 1.5 years. This project gave me hands-on experience building a complete multiplayer game from the ground up while collaborating closely with the team.</p>
       <div class="role-box">
-        <div class="role-box-label">// What I built &mdash; solo, from scratch</div>
+        <div class="role-box-label">// What I built &mdash; from scratch</div>
         <ul>
           <li><strong>Card system and deck builder</strong> &mdash; data-asset-driven card definitions (unit type, stats, cost), deck validation, and in-match hand/elixir management loop.</li>
           <li><strong>Unit AI and pathfinding</strong> &mdash; behaviour tree-driven unit logic: march toward target tower, prioritise nearest threat, attack on range trigger, death and reward events.</li>
@@ -48,23 +46,26 @@
 
     <div class="media-col" style="position:sticky;top:80px;align-self:start;height:fit-content;">
       <div class="media-viewer">
-        <div class="media-main" onclick="openVideo('kingdom_main')">
-          <div class="vid-corner">Solo Project</div>
+        <div class="media-main" data-key="kingdom_main" onclick="openVideo('kingdom_main', this)">
+          <div class="vid-corner">Personal Project</div>
           <div class="play-wrap">
             <div class="play-btn"><svg width="20" height="20" viewBox="0 0 20 20"><path class="play-icon" d="M6 4l12 6-12 6V4z"/></svg></div>
-            <div class="vid-label">KingdomColliders &mdash; Gameplay</div>
-            <div class="vid-sub">Add your YouTube / Vimeo URL in the script</div>
           </div>
         </div>
         <div class="media-rail-shell">
           <button class="media-nav" type="button" onclick="scrollMedia(this,-1)" aria-label="Previous media">&lsaquo;</button>
           <div class="media-rail">
-            <div class="media-card video" onclick="openVideo('kingdom_main')"><span class="media-card-label">Gameplay</span></div>
-            <div class="media-card video" onclick="openVideo('kingdom_ai')"><span class="media-card-label">Unit AI demo</span></div>
-            <div class="media-card video" onclick="openVideo('kingdom_cards')"><span class="media-card-label">Card system</span></div>
-            <div class="media-card photo" onclick="openPhoto('kingdom',0)"><span class="media-card-label">Screenshot 1</span></div>
-            <div class="media-card photo" onclick="openPhoto('kingdom',1)"><span class="media-card-label">Screenshot 2</span></div>
-            <div class="media-card photo" onclick="openPhoto('kingdom',2)"><span class="media-card-label">Screenshot 3</span></div>
+            <div class="media-card video" data-key="kingdom_main" onclick="openVideo('kingdom_main', this)"></div>
+            <div class="media-card video" data-key="kingdom_ai" onclick="openVideo('kingdom_ai', this)"></div>
+            <div class="media-card video" data-key="kingdom_cards" onclick="openVideo('kingdom_cards', this)"></div>
+            <div class="media-card photo" data-game="kingdom" data-idx="0" onclick="openPhoto('kingdom',0,this)"></div>
+            <div class="media-card photo" data-game="kingdom" data-idx="1" onclick="openPhoto('kingdom',1,this)"></div>
+            <div class="media-card photo" data-game="kingdom" data-idx="2" onclick="openPhoto('kingdom',2,this)"></div>
+            <div class="media-card photo" data-game="kingdom" data-idx="3" onclick="openPhoto('kingdom',3,this)"></div>
+            <div class="media-card photo" data-game="kingdom" data-idx="4" onclick="openPhoto('kingdom',4,this)"></div>
+            <div class="media-card photo" data-game="kingdom" data-idx="5" onclick="openPhoto('kingdom',5,this)"></div>
+            <div class="media-card photo" data-game="kingdom" data-idx="6" onclick="openPhoto('kingdom',6,this)"></div>
+            <div class="media-card photo" data-game="kingdom" data-idx="7" onclick="openPhoto('kingdom',7,this)"></div>
           </div>
           <button class="media-nav" type="button" onclick="scrollMedia(this,1)" aria-label="Next media">&rsaquo;</button>
         </div>

@@ -53,23 +53,23 @@
 
     <div class="media-col" style="position:sticky;top:80px;align-self:start;height:fit-content;">
       <div class="media-viewer">
-        <div class="media-main" onclick="openVideo('shib_main')">
+        <div class="media-main" data-key="shib_main" onclick="openVideo('shib_main', this)">
           <div class="vid-corner">Gameplay Reel &middot; 2024</div>
           <div class="play-wrap">
             <div class="play-btn"><svg width="20" height="20" viewBox="0 0 20 20"><path class="play-icon" d="M6 4l12 6-12 6V4z"/></svg></div>
-            <div class="vid-label">Shib Eternity &mdash; Gameplay Reel</div>
-            <div class="vid-sub">Add your YouTube / Vimeo URL in the script</div>
           </div>
         </div>
         <div class="media-rail-shell">
           <button class="media-nav" type="button" onclick="scrollMedia(this,-1)" aria-label="Previous media">&lsaquo;</button>
           <div class="media-rail">
-            <div class="media-card video" onclick="openVideo('shib_main')"><span class="media-card-label">Gameplay Reel</span></div>
-            <div class="media-card video" onclick="openVideo('shib_mp')"><span class="media-card-label">Multiplayer demo</span></div>
-            <div class="media-card video" onclick="openVideo('shib_tech')"><span class="media-card-label">Tech walkthrough</span></div>
-            <div class="media-card photo" onclick="openPhoto('shib',0)"><span class="media-card-label">Screenshot 1</span></div>
-            <div class="media-card photo" onclick="openPhoto('shib',1)"><span class="media-card-label">Screenshot 2</span></div>
-            <div class="media-card photo" onclick="openPhoto('shib',2)"><span class="media-card-label">Screenshot 3</span></div>
+            <div class="media-card video" data-key="shib_main" onclick="openVideo('shib_main', this)"></div>
+            <div class="media-card video" data-key="shib_mp" onclick="openVideo('shib_mp', this)"></div>
+            <!-- <div class="media-card video" data-key="shib_tech" onclick="openVideo('shib_tech', this)"></div> -->
+            <div class="media-card photo" data-game="shib" data-idx="0" onclick="openPhoto('shib',0,this)"></div>
+            <div class="media-card photo" data-game="shib" data-idx="1" onclick="openPhoto('shib',1,this)"></div>
+            <div class="media-card photo" data-game="shib" data-idx="2" onclick="openPhoto('shib',2,this)"></div>
+            <div class="media-card photo" data-game="shib" data-idx="3" onclick="openPhoto('shib',3,this)"></div>
+            <div class="media-card photo" data-game="shib" data-idx="4" onclick="openPhoto('shib',4,this)"></div>
           </div>
           <button class="media-nav" type="button" onclick="scrollMedia(this,1)" aria-label="Next media">&rsaquo;</button>
         </div>

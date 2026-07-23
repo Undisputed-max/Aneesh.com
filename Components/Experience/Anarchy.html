@@ -42,23 +42,25 @@
 
     <div class="media-col" style="position:sticky;top:80px;align-self:start;height:fit-content;">
       <div class="media-viewer">
-        <div class="media-main" onclick="openVideo('anarchy_main')">
+        <div class="media-main" data-key="anarchy_main" onclick="openVideo('anarchy_main', this)">
           <div class="vid-corner">Gameplay &middot; 2023</div>
           <div class="play-wrap">
             <div class="play-btn"><svg width="20" height="20" viewBox="0 0 20 20"><path class="play-icon" d="M6 4l12 6-12 6V4z"/></svg></div>
-            <div class="vid-label">Anarchy Warzone &mdash; Gameplay</div>
-            <div class="vid-sub">Add your YouTube / Vimeo URL in the script</div>
           </div>
         </div>
         <div class="media-rail-shell">
           <button class="media-nav" type="button" onclick="scrollMedia(this,-1)" aria-label="Previous media">&lsaquo;</button>
           <div class="media-rail">
-            <div class="media-card video" onclick="openVideo('anarchy_main')"><span class="media-card-label">Gameplay</span></div>
-            <div class="media-card video" onclick="openVideo('anarchy_vehicle')"><span class="media-card-label">Vehicle physics</span></div>
-            <div class="media-card video" onclick="openVideo('anarchy_inv')"><span class="media-card-label">Inventory demo</span></div>
-            <div class="media-card photo" onclick="openPhoto('anarchy',0)"><span class="media-card-label">Screenshot 1</span></div>
-            <div class="media-card photo" onclick="openPhoto('anarchy',1)"><span class="media-card-label">Screenshot 2</span></div>
-            <div class="media-card photo" onclick="openPhoto('anarchy',2)"><span class="media-card-label">Screenshot 3</span></div>
+            <div class="media-card video" data-key="anarchy_main" onclick="openVideo('anarchy_main', this)"></div>
+            <div class="media-card video" data-key="anarchy_vehicle" onclick="openVideo('anarchy_vehicle', this)"></div>
+            <!--<div class="media-card video" data-key="anarchy_inv" onclick="openVideo('anarchy_inv', this)"></div>-->
+            <div class="media-card photo" data-game="anarchy" data-idx="0" onclick="openPhoto('anarchy',0,this)"></div>
+            <div class="media-card photo" data-game="anarchy" data-idx="1" onclick="openPhoto('anarchy',1,this)"></div>
+            <div class="media-card photo" data-game="anarchy" data-idx="5" onclick="openPhoto('anarchy',5,this)"></div>
+            <div class="media-card photo" data-game="anarchy" data-idx="2" onclick="openPhoto('anarchy',2,this)"></div>
+            <div class="media-card photo" data-game="anarchy" data-idx="3" onclick="openPhoto('anarchy',3,this)"></div>
+            <div class="media-card photo" data-game="anarchy" data-idx="4" onclick="openPhoto('anarchy',4,this)"></div>
+<!--            <div class="media-card photo" data-game="anarchy" data-idx="6" onclick="openPhoto('anarchy',6,this)"></div>-->
           </div>
           <button class="media-nav" type="button" onclick="scrollMedia(this,1)" aria-label="Next media">&rsaquo;</button>
         </div>
