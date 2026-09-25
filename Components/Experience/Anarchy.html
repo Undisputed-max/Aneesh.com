@@ -1,7 +1,10 @@
 <section class="game-section" id="anarchy" style="overflow:visible;--project-bg:linear-gradient(135deg,#101821 0%,#0a0d12 52%,#111722 100%);--project-image:radial-gradient(circle at 82% 12%,rgba(71,197,255,.18),transparent 34%),radial-gradient(circle at 92% 72%,rgba(80,92,104,.25),transparent 38%);">
+
   <div class="game-header">
     <div class="game-featured-badge blue">Anarchy &middot; Sep 2022 &ndash; Oct 2023</div>
+
     <div class="game-title" style="color:#fff;">Anarchy<br><span style="color:var(--accent2);">Warzone</span></div>
+
     <div class="game-meta-row">
       <span class="gm-tag blue">Battle Royale</span>
       <span class="gm-tag blue">Vehicles</span>
@@ -12,60 +15,150 @@
 
   <div class="game-grid">
     <div>
-      <p class="game-desc">A <strong>full-scale battle royale</strong> &mdash; last player standing, shrinking zone, looting, and a fleet of driveable vehicles spread across the map. Every vehicle type &mdash; bikes, cars, armoured trucks &mdash; had distinct physics, handling models, and combat interactions, all replicated live across multiplayer clients.</p>
-      <p class="game-desc">I was responsible for three of the hardest systems in any battle royale: <strong>vehicle physics from scratch</strong>, a <strong>full multiplayer inventory system</strong>, and making all of it work at scale across concurrent online sessions. No middleware &mdash; written in Unreal C++ end to end.</p>
+
+      <p class="game-desc">
+        A <strong>full-scale battle royale</strong> featuring last-player-standing gameplay, a shrinking safe zone, looting, and a fleet of drivable vehicles across a large map. Vehicle classes including bikes, cars, and armoured trucks featured distinct handling characteristics, physics, and combat interactions, integrated into the multiplayer gameplay.
+      </p>
+
+      <p class="game-desc">
+        My focus: <strong>vehicle physics and handling systems</strong>, a <strong>multiplayer inventory system</strong>, and <strong>network synchronisation</strong> across online sessions. Developed using Unity and C#, with a focus on responsive gameplay, consistent multiplayer state, and performance optimisation.
+      </p>
 
       <div class="role-box">
         <div class="role-box-label">// My responsibilities</div>
+
         <ul>
-          <li>Built <strong>all vehicle types from the ground up</strong> &mdash; custom wheel physics, suspension simulation, torque curves, collision response, and networked movement for bikes, cars, and armoured vehicles.</li>
-          <li>Implemented a <strong>full multiplayer inventory system</strong> &mdash; item pickup, storage, equip/drop, and UI &mdash; all replicated with server authority, conflict resolution, and anti-cheat validation.</li>
-          <li>Architected <strong>client-server state replication</strong> for vehicle occupancy, weapon state, and player inventory with delta-compression to keep bandwidth under control at scale.</li>
-          <li>Owned <strong>cross-platform build pipeline</strong> &mdash; single codebase delivering consistent gameplay across different target devices.</li>
-          <li>Built and iterated the <strong>multiplayer UI/UX</strong> &mdash; health, inventory HUD, vehicle interaction prompts &mdash; all driven by replicated game state.</li>
+          <li>
+            Developed <strong>custom vehicle physics and handling</strong>
+            &mdash; vehicle movement, suspension behaviour, steering, torque tuning, and collision response for bikes, cars, and armoured vehicles.
+          </li>
+
+          <li>
+            Implemented a <strong>multiplayer inventory system</strong>
+            &mdash; item pickup, storage, equipment, weapon switching, and inventory UI synchronised with multiplayer gameplay.
+          </li>
+
+          <li>
+            Integrated <strong>client-server gameplay synchronisation</strong>
+            &mdash; vehicle movement, player state, weapon state, and inventory updates across multiplayer clients using Photon networking.
+          </li>
+
+          <li>
+            Worked on the <strong>cross-platform build pipeline</strong>
+            &mdash; Unity build configuration and gameplay compatibility across supported target devices.
+          </li>
+
+          <li>
+            Developed and iterated the <strong>multiplayer UI/UX</strong>
+            &mdash; health indicators, inventory HUD, vehicle interaction prompts, and gameplay interface elements connected to player and match state.
+          </li>
         </ul>
       </div>
 
       <div class="arch-label">// System architecture</div>
+
       <div class="arch-grid" style="grid-template-columns:repeat(3,1fr);">
-        <div class="arch-block"><div class="arch-block-tag">Vehicles</div><div class="arch-block-title">Custom Vehicle Physics</div><div class="arch-block-desc">Built on UE's Chaos Vehicle plugin, extended with custom suspension and torque models per vehicle class. Networked via compressed transform replication &mdash; smooth interpolation on clients, authoritative simulation on server.</div></div>
-        <div class="arch-block"><div class="arch-block-tag">Inventory</div><div class="arch-block-title">Replicated Inventory</div><div class="arch-block-desc">TArray-backed inventory component on each PlayerState, replicated with FFastArraySerializer for delta efficiency. Server validates all pickup/drop RPCs before committing state. Supports stacking, equip slots, and loot spawner integration.</div></div>
-        <div class="arch-block"><div class="arch-block-tag">Networking</div><div class="arch-block-title">BR Session Management</div><div class="arch-block-desc">Online Subsystem session flow: lobby &rarr; map load &rarr; in-game &rarr; results. Zone shrink logic runs server-side, broadcast via multicast. Player elimination handled with deferred authority to prevent desync on kill confirmation.</div></div>
+
+        <div class="arch-block">
+          <div class="arch-block-tag">Vehicles</div>
+
+          <div class="arch-block-title">Custom Vehicle Physics</div>
+
+          <div class="arch-block-desc">
+            Implemented vehicle handling in Unity using WheelColliders and Rigidbody physics, with suspension, steering, and torque tuning for different vehicle classes. Photon synchronisation used for networked vehicle movement, with transform interpolation for smoother remote-client movement.
+          </div>
+        </div>
+
+        <div class="arch-block">
+          <div class="arch-block-tag">Inventory</div>
+
+          <div class="arch-block-title">Multiplayer Inventory</div>
+
+          <div class="arch-block-desc">
+            Developed a modular C# inventory system supporting item pickup, storage, equipment slots, weapon switching, and loot management. Integrated inventory updates with multiplayer gameplay to maintain consistent player inventory state across connected clients.
+          </div>
+        </div>
+
+        <div class="arch-block">
+          <div class="arch-block-tag">Networking</div>
+
+          <div class="arch-block-title">Battle Royale Session Management</div>
+
+          <div class="arch-block-desc">
+            Implemented Photon session flow covering lobby, map loading, gameplay, and match results. Integrated safe-zone shrink logic and player elimination with multiplayer game-state updates to keep match progression consistent across connected clients.
+          </div>
+        </div>
+
       </div>
 
       <div class="tech-label">// Technologies</div>
+
       <div class="tech-stack">
-        <span class="tp core">Unreal Engine</span><span class="tp core">C++</span><span class="tp core">Chaos Physics</span><span class="tp core">FFastArraySerializer</span>
-        <span class="tp">Online Subsystem</span><span class="tp">RPCs</span><span class="tp">UMG HUD</span><span class="tp">Git</span><span class="tp">Perforce</span>
+        <span class="tp core">Unity Engine</span>
+        <span class="tp core">C#</span>
+        <span class="tp core">Photon Networking</span>
+        <span class="tp core">Vehicle Physics</span>
+        <span class="tp">Rigidbody</span>
+        <span class="tp">WheelColliders</span>
+        <span class="tp">Multiplayer Systems</span>
+        <span class="tp">Inventory System</span>
+        <span class="tp">Mobile Optimisation</span>
+        <span class="tp">Git</span>
       </div>
+
     </div>
 
     <div class="media-col" style="position:sticky;top:80px;align-self:start;height:fit-content;">
+
       <div class="media-viewer">
+
         <div class="media-main" data-key="anarchy_main" onclick="openVideo('anarchy_main', this)">
           <div class="vid-corner">Gameplay &middot; 2023</div>
+
           <div class="play-wrap">
-            <div class="play-btn"><svg width="20" height="20" viewBox="0 0 20 20"><path class="play-icon" d="M6 4l12 6-12 6V4z"/></svg></div>
+            <div class="play-btn">
+              <svg width="20" height="20" viewBox="0 0 20 20">
+                <path class="play-icon" d="M6 4l12 6-12 6V4z"/>
+              </svg>
+            </div>
           </div>
         </div>
+
         <div class="media-rail-shell">
+
           <button class="media-nav" type="button" onclick="scrollMedia(this,-1)" aria-label="Previous media">&lsaquo;</button>
+
           <div class="media-rail">
+
             <div class="media-card video" data-key="anarchy_main" onclick="openVideo('anarchy_main', this)"></div>
+
             <div class="media-card video" data-key="anarchy_vehicle" onclick="openVideo('anarchy_vehicle', this)"></div>
+
             <!--<div class="media-card video" data-key="anarchy_inv" onclick="openVideo('anarchy_inv', this)"></div>-->
+
             <div class="media-card photo" data-game="anarchy" data-idx="0" onclick="openPhoto('anarchy',0,this)"></div>
+
             <div class="media-card photo" data-game="anarchy" data-idx="1" onclick="openPhoto('anarchy',1,this)"></div>
+
             <div class="media-card photo" data-game="anarchy" data-idx="5" onclick="openPhoto('anarchy',5,this)"></div>
+
             <div class="media-card photo" data-game="anarchy" data-idx="2" onclick="openPhoto('anarchy',2,this)"></div>
+
             <div class="media-card photo" data-game="anarchy" data-idx="3" onclick="openPhoto('anarchy',3,this)"></div>
+
             <div class="media-card photo" data-game="anarchy" data-idx="4" onclick="openPhoto('anarchy',4,this)"></div>
-<!--            <div class="media-card photo" data-game="anarchy" data-idx="6" onclick="openPhoto('anarchy',6,this)"></div>-->
+
+            <!--<div class="media-card photo" data-game="anarchy" data-idx="6" onclick="openPhoto('anarchy',6,this)"></div>-->
+
           </div>
+
           <button class="media-nav" type="button" onclick="scrollMedia(this,1)" aria-label="Next media">&rsaquo;</button>
+
         </div>
       </div>
+
       <p class="media-note">&rarr; Add more .media-card items to this rail for extra videos or screenshots.</p>
+
     </div>
   </div>
 </section>

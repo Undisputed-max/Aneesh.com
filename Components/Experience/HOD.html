@@ -1,70 +1,147 @@
 <section class="game-section alt" id="heroes" style="overflow:visible;">
   <div class="game-header">
     <div class="game-featured-badge" style="background:var(--muted);color:#fff;">Gods &amp; Heroes &middot; Jul 2021 &ndash; May 2022</div>
+
     <div class="game-title">Heroes of<br><span>District</span></div>
+
     <div class="game-meta-row">
-      <span class="gm-tag">Mobile Action RPG</span>
-      <span class="gm-tag">Weapon Systems</span>
-      <span class="gm-tag">Inventory</span>
-      <span class="gm-tag">Shader VFX</span>
+      <span class="gm-tag">5v5 Competitive Shooter</span>
+      <span class="gm-tag">Level Design</span>
+      <span class="gm-tag">Core Gameplay</span>
+      <span class="gm-tag">Unreal C++</span>
     </div>
   </div>
 
   <div class="game-grid">
     <div>
-      <p class="game-desc">A <strong>mobile action RPG</strong> with weapon variety, real-time combat, and distinct visual identity across character classes. The game required performant shader work for realistic visuals on mobile hardware &mdash; a direct constraint that shaped every rendering decision.</p>
-      <p class="game-desc">My focus: <strong>weapon and inventory systems</strong> built cleanly enough to support rapid content expansion, <strong>shader-based visual enhancements</strong> that held up on mid-range Android devices, and mobile performance optimisation that kept frame time stable during heavy combat sequences.</p>
+
+      <p class="game-desc">
+        A <strong>5v5 competitive multiplayer shooter</strong> where two teams of five players compete to score more points than their opponents. Featuring distinct heroes, unique weapons, and team-based combat, the game focuses on competitive gameplay, strategic map design, and coordinated team play.
+      </p>
+
+      <p class="game-desc">
+        My role combined <strong>Level Design and Core Gameplay Development</strong> in Unreal Engine using C++. I designed <strong>all the maps featured in the game's trailer</strong> and worked on core gameplay systems, weapon mechanics, and multiplayer gameplay to deliver engaging competitive matches.
+      </p>
 
       <div class="role-box">
         <div class="role-box-label">// My responsibilities</div>
+
         <ul>
-          <li>Designed and implemented a <strong>weapon system</strong> &mdash; weapon components attached to character, swap logic, animation notify integration, hit detection using line/sweep traces with damage type dispatch.</li>
-          <li>Built a <strong>modular inventory system</strong> &mdash; item data assets, equipment slots, pickup/drop flow, and inventory UI bound to gameplay state.</li>
-          <li>Wrote <strong>custom material shaders</strong> in Unreal's material graph for rim lighting, surface wetness, and emissive weapon effects &mdash; all optimised for mobile GPU instruction budgets.</li>
-          <li>Profiled and optimised <strong>mobile performance</strong> &mdash; draw call batching, texture streaming, LOD configuration, and animation tick rate management to hit 60fps on target devices.</li>
+          <li>
+            Designed and developed <strong>all maps featured in the game trailer</strong>
+            &mdash; level layout, combat spaces, player navigation, and map flow, with a focus on balanced 5v5 competitive gameplay.
+          </li>
+
+          <li>
+            Worked as a <strong>Core Gameplay Developer</strong>
+            &mdash; implemented gameplay mechanics, weapon systems, combat interactions, and match flow using Unreal Engine C++.
+          </li>
+
+          <li>
+            Developed and iterated <strong>weapon and combat systems</strong>
+            &mdash; weapon behaviour, firing mechanics, hit detection, damage handling, and integration with character gameplay.
+          </li>
+
+          <li>
+            Contributed to <strong>5v5 multiplayer gameplay</strong>
+            &mdash; worked on gameplay systems supporting team-based combat, player interactions, and competitive match progression.
+          </li>
+
+          <li>
+            Collaborated across <strong>level design and gameplay development</strong>
+            &mdash; iterated on map layouts, combat encounters, and gameplay mechanics to support engaging team-based matches.
+          </li>
         </ul>
       </div>
 
       <div class="arch-label">// System architecture</div>
+
       <div class="arch-grid" style="grid-template-columns:repeat(3,1fr);">
-        <div class="arch-block"><div class="arch-block-tag">Weapons</div><div class="arch-block-title">Component-based Weapon System</div><div class="arch-block-desc">UActorComponent subclass per weapon type, attached to character skeleton socket. Fire/reload logic encapsulated per component. Damage dispatched via UGameplayStatics with custom damage type assets for elemental effects.</div></div>
-        <div class="arch-block"><div class="arch-block-tag">Inventory</div><div class="arch-block-title">Data-Asset Inventory</div><div class="arch-block-desc">Items defined as UDataAsset blueprints &mdash; type, rarity, mesh, stats. Inventory component holds TArray of item references. UI widget bound via UMG property binding, updating reactively on inventory mutation.</div></div>
-        <div class="arch-block"><div class="arch-block-tag">Rendering</div><div class="arch-block-title">Mobile Shader Optimisation</div><div class="arch-block-desc">Custom material functions for rim light, emissive pulse, and surface variation. Instruction counts kept under mobile GPU limits using texture atlases and conditional static switches. Shader complexity visualiser used throughout development.</div></div>
+
+        <div class="arch-block">
+          <div class="arch-block-tag">Level Design</div>
+
+          <div class="arch-block-title">Competitive Map Design</div>
+
+          <div class="arch-block-desc">
+            Designed all maps featured in the game trailer, focusing on level layout, combat arenas, player navigation, sightlines, and team-based encounter spaces. Developed map layouts to support competitive 5v5 matches and strategic gameplay.
+          </div>
+        </div>
+
+        <div class="arch-block">
+          <div class="arch-block-tag">Gameplay</div>
+
+          <div class="arch-block-title">Core Combat Systems</div>
+
+          <div class="arch-block-desc">
+            Developed core gameplay mechanics in Unreal Engine C++, including weapon behaviour, combat interactions, hit detection, and damage handling. Integrated gameplay systems with character abilities and weapon-specific mechanics.
+          </div>
+        </div>
+
+        <div class="arch-block">
+          <div class="arch-block-tag">Multiplayer</div>
+
+          <div class="arch-block-title">5v5 Competitive Gameplay</div>
+
+          <div class="arch-block-desc">
+            Contributed to team-based multiplayer gameplay supporting two teams of five players. Worked on gameplay interactions, combat mechanics, and match progression for competitive scoring-based matches.
+          </div>
+        </div>
+
       </div>
 
       <div class="tech-label">// Technologies</div>
+
       <div class="tech-stack">
-        <span class="tp core">Unreal Engine</span><span class="tp core">C++</span><span class="tp core">Custom Materials</span><span class="tp core">Animation Blueprints</span>
-        <span class="tp">UDataAsset</span><span class="tp">UMG</span><span class="tp">Mobile Profiling</span><span class="tp">LOD</span><span class="tp">Texture Streaming</span>
+        <span class="tp core">Unreal Engine</span>
+        <span class="tp core">C++</span>
+        <span class="tp core">Level Design</span>
+        <span class="tp core">Core Gameplay</span>
+        <span class="tp">Multiplayer Systems</span>
+        <span class="tp">Weapon Systems</span>
+        <span class="tp">Gameplay Mechanics</span>
+        <span class="tp">Map Design</span>
       </div>
 
       <div class="platform-row">
         <div class="plat-badge active">Android</div>
         <div class="plat-badge active">iOS</div>
       </div>
+
     </div>
 
     <div class="media-col" style="position:sticky;top:80px;align-self:start;height:fit-content;">
       <div class="media-viewer">
+
         <div class="media-main" data-key="heroes_main" onclick="openVideo('heroes_main', this)">
           <div class="vid-corner">Gameplay &middot; 2022</div>
+
           <div class="play-wrap">
-            <div class="play-btn"><svg width="20" height="20" viewBox="0 0 20 20"><path class="play-icon" d="M6 4l12 6-12 6V4z"/></svg></div>
+            <div class="play-btn">
+              <svg width="20" height="20" viewBox="0 0 20 20">
+                <path class="play-icon" d="M6 4l12 6-12 6V4z"/>
+              </svg>
+            </div>
           </div>
         </div>
+
         <div class="media-rail-shell">
           <button class="media-nav" type="button" onclick="scrollMedia(this,-1)" aria-label="Previous media">&lsaquo;</button>
+
           <div class="media-rail">
             <div class="media-card video" data-key="heroes_main" onclick="openVideo('heroes_main', this)"></div>
+
             <!--<div class="media-card video" data-key="heroes_weapon" onclick="openVideo('heroes_weapon', this)"></div>
             <div class="media-card video" data-key="heroes_shader" onclick="openVideo('heroes_shader', this)"></div>
             <div class="media-card photo" data-game="heroes" data-idx="0" onclick="openPhoto('heroes',0,this)"></div>
             <div class="media-card photo" data-game="heroes" data-idx="1" onclick="openPhoto('heroes',1,this)"></div>
             <div class="media-card photo" data-game="heroes" data-idx="2" onclick="openPhoto('heroes',2,this)"></div>-->
           </div>
+
           <button class="media-nav" type="button" onclick="scrollMedia(this,1)" aria-label="Next media">&rsaquo;</button>
         </div>
       </div>
+
       <p class="media-note">&rarr; Add more .media-card items to this rail for extra videos or screenshots.</p>
     </div>
   </div>
